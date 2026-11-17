@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Club Presentation | Boas Sababang (251134146)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Presentation Styling & Smooth Animations */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        html:not(.dark) .glass-panel {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.07);
+        }
+
+        .slide-enter {
+            animation: slideFadeIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(14px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.3);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(148, 163, 184, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        html:not(.dark) .gradient-text {
+            background: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #7e22ce 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+
+    <!-- Ambient Background Glow -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-sky-500/15 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- ==========================================
+         TOP NAVIGATION BAR & INDONESIAN ACCESS
+         ========================================== -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80 dark:border-slate-800/80 px-3 sm:px-6 py-2.5">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            
+            <!-- Left: Presenter Identity Badge -->
+            <div class="flex items-center gap-3">
+                <button onclick="goToSlide(0)" class="flex items-center gap-2.5 text-left group focus:outline-none" title="Back to Cover Slide">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-sky-500 flex items-center justify-center text-white font-bold shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                        BS
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-xs sm:text-sm tracking-tight text-slate-900 dark:text-white">Boas Sababang</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-300 border border-indigo-500/30 font-semibold">
+                                251134146
+                            </span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">English Club Presentation Deck</p>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Center: Quick Slide Tabs (Desktop) -->
+            <nav class="hidden lg:flex items-center gap-1 bg-slate-900/60 dark:bg-slate-900/80 p-1 rounded-xl border border-slate-700/50">
+                <button onclick="goToSlide(0)" id="nav-tab-0" class="slide-tab px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">Cover</button>
+                <button onclick="goToSlide(1)" id="nav-tab-1" class="slide-tab px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">1. Research Topic</button>
+                <button onclick="goToSlide(2)" id="nav-tab-2" class="slide-tab px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">2A. Reflection</button>
+                <button onclick="goToSlide(3)" id="nav-tab-3" class="slide-tab px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1">
+                    <i data-lucide="play-circle" class="w-3.5 h-3.5 text-rose-400"></i>
+                    <span>2B. Strategy & Video</span>
+                </button>
+                <button onclick="goToSlide(4)" id="nav-tab-4" class="slide-tab px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">3. Recommendation</button>
+                <button onclick="goToSlide(5)" id="nav-tab-5" class="slide-tab px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">Summary</button>
+            </nav>
+
+            <!-- Right: Top Indonesian Translation Access & Language Controls -->
+            <div class="flex items-center gap-2">
+                <!-- Top Indonesian Translation Drawer Toggle Button -->
+                <button onclick="toggleTopIndonesianBar()" id="btn-top-indo" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-500/15 hover:bg-amber-500/25 text-amber-600 dark:text-amber-300 border border-amber-500/30 transition-all shadow-sm">
+                    <i data-lucide="languages" class="w-3.5 h-3.5"></i>
+                    <span id="top-indo-label">Terjemahan ID (Atas)</span>
+                    <i data-lucide="chevron-down" id="top-indo-chevron" class="w-3.5 h-3.5 transition-transform duration-200"></i>
+                </button>
+
+                <!-- Primary Slide Language Switcher (EN Default / ID Full) -->
+                <div class="flex items-center bg-slate-200 dark:bg-slate-900 p-0.5 rounded-xl border border-slate-300 dark:border-slate-700/70">
+                    <button onclick="setLanguage('en')" id="lang-btn-en" class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow">
+                        EN
+                    </button>
+                    <button onclick="setLanguage('id')" id="lang-btn-id" class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                        ID
+                    </button>
+                </div>
+
+                <!-- Light/Dark Mode Toggle -->
+                <button onclick="toggleTheme()" class="p-2 rounded-xl bg-slate-200/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all" title="Toggle Dark/Light Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-indigo-600"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- =======================================================
+             COLLAPSIBLE TOP INDONESIAN TRANSLATION PANEL (DI ATAS)
+             ======================================================= -->
+        <div id="top-indo-drawer" class="hidden mt-2.5 pt-2.5 border-t border-amber-500/30 bg-amber-950/30 dark:bg-amber-950/40 rounded-xl p-3 sm:p-4 text-xs sm:text-sm transition-all">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 font-bold text-[11px] uppercase tracking-wider">
+                            Versi Bahasa Indonesia (Terjemahan Slide Aktif)
+                        </span>
+                        <span id="top-indo-slide-title" class="font-semibold text-amber-700 dark:text-amber-200">Slide 1: Sampul Presentasi</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="setLanguage('id'); toggleTopIndonesianBar();" class="text-[11px] underline text-amber-600 dark:text-amber-300 hover:text-amber-400 font-medium">
+                            Ubah Seluruh Slide ke B. Indonesia
+                        </button>
+                        <button onclick="toggleTopIndonesianBar()" class="p-1 rounded-lg hover:bg-amber-500/20 text-amber-500">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="top-indo-content" class="text-slate-700 dark:text-slate-200 leading-relaxed space-y-1.5 max-h-48 overflow-y-auto pr-2">
+                    <!-- Populated dynamically based on current slide -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Progress Bar -->
+    <div class="w-full h-1 bg-slate-200 dark:bg-slate-900 z-30">
+        <div id="slide-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 via-sky-400 to-purple-500 transition-all duration-300" style="width: 16.66%"></div>
+    </div>
+
+    <!-- ==========================================
+         MAIN SLIDE DECK CONTAINER
+         ========================================== -->
+    <main class="flex-1 relative z-10 flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-8">
+
+        <!-- ==========================================
+             SLIDE 0: COVER SLIDE (DEFAULT FIRST PAGE)
+             ========================================== -->
+        <section id="slide-0" class="slide-item slide-enter">
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-300/80 dark:border-slate-800 relative overflow-hidden">
+                <!-- Decorative Grid Accent -->
+                <div class="absolute -right-12 -bottom-12 w-72 h-72 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Left Column: Title & Presenter Info -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-600 dark:text-indigo-300 text-xs font-semibold">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            <span data-i18n="cover_badge">ENGLISH CLUB PRESENTATION • ELEMENTARY EDUCATION</span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+                            <span data-i18n="cover_title_1">English Fluency in</span>
+                            <span class="gradient-text block mt-1" data-i18n="cover_title_2">Elementary School & Learning Strategies</span>
+                        </h1>
+
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl" data-i18n="cover_desc">
+                            An interactive presentation exploring why elementary school teachers should speak English fluently, personal daily learning reflections, subtitle & shadowing strategies, and recommendations for the English Club.
+                        </p>
+
+                        <!-- Presenter Identity Card (Boas Sababang - 251134146) -->
+                        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-indigo-950/60 via-slate-900/80 to-slate-900/60 border border-indigo-500/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-sky-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-indigo-500/30 shrink-0">
+                                    BS
+                                </div>
+                                <div>
+                                    <span class="text-[11px] uppercase tracking-wider font-semibold text-indigo-300 block" data-i18n="presenter_label">Presented By</span>
+                                    <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Boas Sababang</h2>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-xs text-slate-300 font-medium">NIM:</span>
+                                        <span class="font-mono text-xs sm:text-sm font-bold px-2.5 py-0.5 rounded-md bg-sky-500/20 text-sky-300 border border-sky-400/30">
+                                            251134146
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex sm:flex-col gap-2 w-full sm:w-auto justify-end">
+                                <button onclick="goToSlide(1)" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30 transition-all">
+                                    <span data-i18n="btn_start">Start Presentation</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="goToSlide(3)" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/30 font-semibold text-xs flex items-center justify-center gap-1.5 transition-all">
+                                    <i data-lucide="youtube" class="w-3.5 h-3.5"></i>
+                                    <span data-i18n="btn_jump_video">Strategy & YouTube Player</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Presentation Agenda Overview -->
+                    <div class="lg:col-span-5 space-y-3.5">
+                        <div class="p-4 rounded-2xl bg-slate-900/50 dark:bg-slate-900/70 border border-slate-700/60 hover:border-indigo-500/50 transition-all cursor-pointer group" onclick="goToSlide(1)">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                    01
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-indigo-400 transition-colors" data-i18n="agenda_1_title">1. Research Topic</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="agenda_1_desc">Should elementary school teachers speak English fluently? (Accurate Foundation, Global Resources, Habit Building).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-900/50 dark:bg-slate-900/70 border border-slate-700/60 hover:border-sky-500/50 transition-all cursor-pointer group" onclick="goToSlide(2)">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold shrink-0 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                                    02
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-sky-400 transition-colors" data-i18n="agenda_2_title">2. Self-Reflection & Subtitle Strategy</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="agenda_2_desc">Proficiency level, daily routines, overcoming grammar overthinking, and live YouTube Subtitle & Shadowing practice.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-900/50 dark:bg-slate-900/70 border border-slate-700/60 hover:border-emerald-500/50 transition-all cursor-pointer group" onclick="goToSlide(4)">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                                    03
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-emerald-400 transition-colors" data-i18n="agenda_3_title">3. Recommendation</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="agenda_3_desc">Evaluation of this English Club as a safe, grade-free space and why juniors should join early.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bilingual Hint Box -->
+                        <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-2.5 text-xs text-amber-700 dark:text-amber-300">
+                                <i data-lucide="info" class="w-4 h-4 shrink-0"></i>
+                                <span data-i18n="bilingual_hint">English is shown first. Access Indonesian translation anytime at the top bar!</span>
+                            </div>
+                            <button onclick="toggleTopIndonesianBar()" class="px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-[11px] shrink-0 hover:bg-amber-400 transition-colors">
+                                Buka ID
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SLIDE 1: 1. RESEARCH TOPIC
+             ========================================== -->
+        <section id="slide-1" class="slide-item hidden">
+            <div class="glass-panel rounded-3xl p-6 sm:p-9 border border-slate-300/80 dark:border-slate-800 space-y-6">
+                
+                <!-- Header & Question Prompt -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/50 pb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400" data-i18n="s1_section">PART 01 • RESEARCH TOPIC</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="s1_question">
+                            Should Elementary School Teachers Be Able to Speak English Fluently?
+                        </h2>
+                    </div>
+                    <div class="px-4 py-2.5 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-300 text-xs sm:text-sm font-bold flex items-center gap-2 shrink-0">
+                        <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                        <span data-i18n="s1_thesis">Yes! For 3 Main Reasons</span>
+                    </div>
+                </div>
+
+                <!-- 3 Reasons Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Reason 1: Accurate Foundation -->
+                    <div class="rounded-2xl bg-slate-900/50 dark:bg-slate-900/75 border border-slate-700/60 p-6 flex flex-col justify-between hover:border-indigo-500/60 transition-all">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                                    <i data-lucide="mic" class="w-6 h-6"></i>
+                                </div>
+                                <span class="font-mono text-xs font-bold text-slate-400">REASON 01</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white" data-i18n="s1_r1_title">Accurate Foundation</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="s1_r1_point">
+                                Children imitate their teachers easily. Accurate teacher pronunciation builds a strong foundation early on.
+                            </p>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-slate-700/50 space-y-3">
+                            <div class="p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-400 block mb-1" data-i18n="example_label">Real Classroom Example:</span>
+                                <p class="text-xs text-slate-300 leading-relaxed" data-i18n="s1_r1_ex">
+                                    If a teacher pronounces daily instructions like <strong class="text-white">"Line up, please"</strong> correctly, students will naturally build good pronunciation from a young age.
+                                </p>
+                            </div>
+                            <button onclick="speakPhrase('Line up, please!')" class="w-full py-2 px-3 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/40 text-indigo-300 border border-indigo-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                                <span>Test Audio: "Line up, please"</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Reason 2: Global Learning Resources -->
+                    <div class="rounded-2xl bg-slate-900/50 dark:bg-slate-900/75 border border-slate-700/60 p-6 flex flex-col justify-between hover:border-sky-500/60 transition-all">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                                    <i data-lucide="globe-2" class="w-6 h-6"></i>
+                                </div>
+                                <span class="font-mono text-xs font-bold text-slate-400">REASON 02</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white" data-i18n="s1_r2_title">Global Learning Resources</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="s1_r2_point">
+                                Teachers can directly access and adapt rich international teaching materials without language barriers.
+                            </p>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-slate-700/50 space-y-3">
+                            <div class="p-3.5 rounded-xl bg-sky-950/40 border border-sky-500/30">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-sky-400 block mb-1" data-i18n="example_label">Real Classroom Example:</span>
+                                <p class="text-xs text-slate-300 leading-relaxed" data-i18n="s1_r2_ex">
+                                    A teacher can use interactive science videos or educational games from foreign websites to make classes more engaging.
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-2 text-[11px] text-sky-400 font-medium px-1">
+                                <i data-lucide="monitor-play" class="w-4 h-4"></i>
+                                <span data-i18n="s1_r2_tag">Interactive Science Videos & Global Games</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason 3: Habit Building -->
+                    <div class="rounded-2xl bg-slate-900/50 dark:bg-slate-900/75 border border-slate-700/60 p-6 flex flex-col justify-between hover:border-purple-500/60 transition-all">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400">
+                                    <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                                </div>
+                                <span class="font-mono text-xs font-bold text-slate-400">REASON 03</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white" data-i18n="s1_r3_title">Habit Building</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="s1_r3_point">
+                                Consistent daily exposure removes the psychological fear of learning a foreign language.
+                            </p>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-slate-700/50 space-y-3">
+                            <div class="p-3.5 rounded-xl bg-purple-950/40 border border-purple-500/30">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-purple-400 block mb-1" data-i18n="example_label">Real Classroom Example:</span>
+                                <p class="text-xs text-slate-300 leading-relaxed" data-i18n="s1_r3_ex">
+                                    Greeting students in English every morning makes them treat English as a normal communication tool, not a scary exam subject.
+                                </p>
+                            </div>
+                            <button onclick="speakPhrase('Good morning class! How are you today?')" class="w-full py-2 px-3 rounded-xl bg-purple-600/20 hover:bg-purple-600/40 text-purple-300 border border-purple-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                                <span>Test Audio: Morning Greeting</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SLIDE 2: 2A. REFLECTION (LEVEL, DAILY HABITS & FAVORITE PART)
+             ========================================== -->
+        <section id="slide-2" class="slide-item hidden">
+            <div class="glass-panel rounded-3xl p-6 sm:p-9 border border-slate-300/80 dark:border-slate-800 space-y-6">
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/50 pb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-sky-500 dark:text-sky-400" data-i18n="s2_section">PART 02 • PERSONAL REFLECTION (1/2)</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="s2_title">
+                            Understanding Level, Daily Routine & Favorite Part
+                        </h2>
+                    </div>
+                    <div class="px-4 py-2 rounded-xl bg-sky-500/15 border border-sky-500/30 text-sky-400 text-xs font-bold flex items-center gap-2 self-start md:self-auto">
+                        <i data-lucide="user-check" class="w-4 h-4"></i>
+                        <span>Boas Sababang • 251134146</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Card 1: How well do you understand English? -->
+                    <div class="rounded-2xl bg-slate-900/55 border border-slate-700/60 p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs font-bold" data-i18n="s2_c1_badge">Intermediate Level</span>
+                            <i data-lucide="bar-chart-3" class="w-5 h-5 text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-white" data-i18n="s2_c1_q">How well do you understand English?</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed" data-i18n="s2_c1_a">
+                            I am at an <strong class="text-indigo-300">intermediate level</strong>. I can understand daily conversations, main ideas in articles, and movies with English subtitles, though I am still improving my active speaking skills.
+                        </p>
+                        <!-- Skill Meters -->
+                        <div class="space-y-2.5 pt-2">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-slate-400" data-i18n="skill_1">Movies with English Subtitles & Listening</span>
+                                    <span class="text-indigo-400 font-bold">85%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-indigo-500 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-slate-400" data-i18n="skill_2">Daily Conversations & Main Ideas in Articles</span>
+                                    <span class="text-sky-400 font-bold">80%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-sky-500 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-slate-400" data-i18n="skill_3">Active Speaking Fluency (In Progress)</span>
+                                    <span class="text-amber-400 font-bold">65%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-amber-500 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: How do you learn English on a daily basis? -->
+                    <div class="rounded-2xl bg-slate-900/55 border border-slate-700/60 p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-bold" data-i18n="s2_c2_badge">Daily Habit Integration</span>
+                            <i data-lucide="calendar-clock" class="w-5 h-5 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-white" data-i18n="s2_c2_q">How do you learn English on a daily basis?</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed" data-i18n="s2_c2_a">
+                            I integrate English into my daily routine by watching English content on YouTube, listening to podcasts or music, and setting my phone's language to English.
+                        </p>
+                        <div class="space-y-2.5 pt-1">
+                            <div class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/70 border border-slate-700/50">
+                                <i data-lucide="youtube" class="w-5 h-5 text-rose-400 shrink-0"></i>
+                                <span class="text-xs text-slate-200 font-medium" data-i18n="habit_1">Watching English Content on YouTube</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/70 border border-slate-700/50">
+                                <i data-lucide="headphones" class="w-5 h-5 text-sky-400 shrink-0"></i>
+                                <span class="text-xs text-slate-200 font-medium" data-i18n="habit_2">Listening to English Podcasts & Music</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/70 border border-slate-700/50">
+                                <i data-lucide="smartphone" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+                                <span class="text-xs text-slate-200 font-medium" data-i18n="habit_3">Setting Phone System Language to English</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Which part of learning English do you like most? Why? -->
+                    <div class="rounded-2xl bg-slate-900/55 border border-slate-700/60 p-6 flex flex-col justify-between space-y-4">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-bold" data-i18n="s2_c3_badge">Favorite Aspect</span>
+                                <i data-lucide="Sparkles" class="w-5 h-5 text-purple-400"></i>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-white" data-i18n="s2_c3_q">Which part of learning English do you like most? Why?</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed" data-i18n="s2_c3_a">
+                                I like <strong class="text-purple-300">listening and vocabulary enrichment</strong> the most because I can learn naturally through movies and songs, allowing me to understand real-life expressions without feeling stressed.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-gradient-to-br from-purple-950/50 to-indigo-950/50 border border-purple-500/30 space-y-2">
+                            <div class="flex items-center gap-2 text-xs font-bold text-purple-300">
+                                <i data-lucide="film" class="w-4 h-4"></i>
+                                <span data-i18n="s2_c3_highlight_title">Why Movies & Songs Work Best:</span>
+                            </div>
+                            <p class="text-xs text-slate-300" data-i18n="s2_c3_highlight_desc">
+                                Contextual learning through subtitles + native audio builds real-life idioms and natural intonation without academic stress.
+                            </p>
+                            <button onclick="goToSlide(3)" class="w-full mt-2 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
+                                <span data-i18n="s2_btn_next_strategy">See My Subtitle & Shadowing Strategy</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             SLIDE 3: 2B. STRATEGY FOCUS + YOUTUBE SUBTITLE & SHADOWING STUDIO
+             =============================================================== -->
+        <section id="slide-3" class="slide-item hidden">
+            <div class="glass-panel rounded-3xl p-5 sm:p-8 border border-slate-300/80 dark:border-slate-800 space-y-6">
+                
+                <!-- Slide Header -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-700/50 pb-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold uppercase tracking-widest text-rose-400" data-i18n="s3_section">PART 02 • FOCUS ON LEARNING STRATEGIES</span>
+                            <span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 text-[11px] font-bold">Interactive YouTube Subtitle Studio</span>
+                        </div>
+                        <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="s3_title">
+                            Overcoming Challenges with Shadowing & YouTube Subtitles
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- Main 12-Column Grid: Left (Challenges & Strategies) | Right (YouTube Player & Subtitle Studio) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    
+                    <!-- LEFT COLUMN (5 Cols): Challenges & Strategies from Dialogue -->
+                    <div class="lg:col-span-5 space-y-4">
+                        
+                        <!-- Challenge Box -->
+                        <div class="rounded-2xl bg-rose-950/25 border border-rose-500/30 p-5 space-y-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-rose-500/20 flex items-center justify-center text-rose-400 shrink-0">
+                                    <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-rose-400 block" data-i18n="s3_chal_label">Learning Obstacles</span>
+                                    <h3 class="text-base font-extrabold text-white" data-i18n="s3_chal_q">What has made your learning more difficult?</h3>
+                                </div>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="s3_chal_a">
+                                My biggest challenges are <strong class="text-rose-300">overthinking grammar rules</strong> when speaking and the <strong class="text-rose-300">lack of an English-speaking environment</strong> for daily practice.
+                            </p>
+                        </div>
+
+                        <!-- Strategy Box -->
+                        <div class="rounded-2xl bg-indigo-950/35 border border-indigo-500/40 p-5 space-y-3.5">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
+                                    <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-400 block" data-i18n="s3_strat_label">Core Solution & Strategy</span>
+                                    <h3 class="text-base font-extrabold text-white" data-i18n="s3_strat_q">What strategies have you tried to make learning easier?</h3>
+                                </div>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed" data-i18n="s3_strat_a">
+                                I practice the <strong class="text-sky-300">shadowing technique</strong> by repeating sentences from native speakers in videos, and I focus on <strong class="text-emerald-300">delivering my message first</strong> rather than worrying about perfect grammar.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                                <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-700/70">
+                                    <div class="text-xs font-bold text-sky-400 flex items-center gap-1.5">
+                                        <i data-lucide="subtitles" class="w-4 h-4"></i>
+                                        <span data-i18n="s3_pill_1_t">1. Subtitle + Shadowing</span>
+                                    </div>
+                                    <p class="text-[11px] text-slate-400 mt-1" data-i18n="s3_pill_1_d">Read English subtitles & immediately mimic native speaker rhythm and pronunciation.</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-700/70">
+                                    <div class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                                        <i data-lucide="message-square-check" class="w-4 h-4"></i>
+                                        <span data-i18n="s3_pill_2_t">2. Message Over Grammar</span>
+                                    </div>
+                                    <p class="text-[11px] text-slate-400 mt-1" data-i18n="s3_pill_2_d">Prioritize clear communication first without freezing over grammar rules.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Subtitle Drill Card -->
+                        <div class="rounded-2xl bg-slate-900/80 border border-slate-700/70 p-4 space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-amber-400 flex items-center gap-1.5">
+                                    <i data-lucide="headphones" class="w-4 h-4"></i>
+                                    <span data-i18n="s3_drill_title">Interactive Subtitle Shadowing Phrases (Click to Listen & Repeat)</span>
+                                </span>
+                            </div>
+                            <div class="space-y-1.5">
+                                <button onclick="speakPhrase('I focus on delivering my message first rather than worrying about perfect grammar.')" class="w-full text-left p-2.5 rounded-xl bg-slate-800/90 hover:bg-indigo-950/80 border border-slate-700 hover:border-indigo-500/50 transition-all flex items-center justify-between gap-2 group">
+                                    <div>
+                                        <p class="text-xs font-semibold text-white group-hover:text-indigo-300">"I focus on delivering my message first..."</p>
+                                        <p class="text-[11px] text-slate-400">Terjemahan: Fokus menyampaikan pesan terlebih dahulu.</p>
+                                    </div>
+                                    <i data-lucide="volume-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                                </button>
+                                <button onclick="speakPhrase('Listening to native speakers with subtitles helps me learn natural expressions without stress.')" class="w-full text-left p-2.5 rounded-xl bg-slate-800/90 hover:bg-indigo-950/80 border border-slate-700 hover:border-indigo-500/50 transition-all flex items-center justify-between gap-2 group">
+                                    <div>
+                                        <p class="text-xs font-semibold text-white group-hover:text-indigo-300">"Listening with subtitles helps me learn natural expressions..."</p>
+                                        <p class="text-[11px] text-slate-400">Terjemahan: Belajar ungkapan alami lewat subtitle tanpa stres.</p>
+                                    </div>
+                                    <i data-lucide="volume-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT COLUMN (7 Cols): Dedicated Interactive YouTube Video Player -->
+                    <div class="lg:col-span-7 rounded-2xl bg-slate-900/90 border border-indigo-500/40 p-4 sm:p-5 space-y-4 shadow-xl">
+                        
+                        <!-- Top Controls: Custom YouTube URL Input & Preset Channels -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-800">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></div>
+                                <span class="text-xs sm:text-sm font-bold text-white" data-i18n="yt_studio_title">
+                                    YouTube Learning from Subtitles & Shadowing Player
+                                </span>
+                            </div>
+                            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                                CC / Subtitles Enabled
+                            </span>
+                        </div>
+
+                        <!-- Custom YouTube URL / Video ID Input Bar -->
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <div class="relative flex-1">
+                                <input 
+                                    type="text" 
+                                    id="yt-url-input" 
+                                    placeholder="Paste link YouTube (contoh: https://www.youtube.com/watch?v=MrrxN6GZJaU)..." 
+                                    class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                                >
+                            </div>
+                            <button onclick="loadCustomYouTubeVideo()" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shrink-0 shadow-md transition-all">
+                                <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                                <span data-i18n="yt_btn_load">Load & Play Video</span>
+                            </button>
+                        </div>
+
+                        <!-- Quick Curated Shadowing & Subtitle Video Presets -->
+                        <div class="flex flex-wrap items-center gap-1.5">
+                            <span class="text-[11px] text-slate-400 font-medium mr-1" data-i18n="yt_preset_label">Quick Subtitle Videos:</span>
+                            <button onclick="switchYouTubePreset('MrrxN6GZJaU', 'Shadowing English Speaking Practice (Podcast with Subtitles)')" class="px-2.5 py-1 rounded-lg bg-indigo-600/25 hover:bg-indigo-600/40 text-indigo-200 border border-indigo-500/40 text-[11px] font-semibold transition-all">
+                                1. Daily Conversation Shadowing
+                            </button>
+                            <button onclick="switchYouTubePreset('wMwN94BSPWM', 'Repeat-After-Me Story + Shadowing Practice')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] font-semibold transition-all">
+                                2. Repeat-After-Me Story (CC)
+                            </button>
+                            <button onclick="switchYouTubePreset('ySyPIeBxYBo', 'Listening, Vocabulary & Shadowing Practice')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] font-semibold transition-all">
+                                3. Vocabulary & Subtitle Practice
+                            </button>
+                        </div>
+
+                        <!-- Responsive 16:9 YouTube Iframe Container -->
+                        <div class="relative w-full rounded-2xl overflow-hidden bg-black border border-slate-800 shadow-2xl" style="padding-top: 56.25%;">
+                            <iframe 
+                                id="youtube-player-frame"
+                                class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/MrrxN6GZJaU?cc_load_policy=1&cc_lang_pref=en&rel=0" 
+                                title="YouTube English Subtitle & Shadowing Practice Player"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <!-- Active Video Status & Direct Link Fallback -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs">
+                            <div class="flex items-center gap-2 text-slate-300">
+                                <i data-lucide="tv" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                                <span id="yt-active-title" class="font-medium truncate max-w-xs sm:max-w-md">
+                                    Shadowing English Speaking Practice (Podcast with Subtitles)
+                                </span>
+                            </div>
+                            <a id="yt-direct-link" href="https://www.youtube.com/watch?v=MrrxN6GZJaU" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 underline flex items-center gap-1 text-[11px] font-semibold">
+                                <span>Open on YouTube</span>
+                                <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SLIDE 4: 3. RECOMMENDATION
+             ========================================== -->
+        <section id="slide-4" class="slide-item hidden">
+            <div class="glass-panel rounded-3xl p-6 sm:p-9 border border-slate-300/80 dark:border-slate-800 space-y-6">
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/50 pb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400" data-i18n="s4_section">PART 03 • RECOMMENDATION</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="s4_title">
+                            English Club Evaluation & Recommendation for Juniors
+                        </h2>
+                    </div>
+                    <div class="px-4 py-2 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-bold flex items-center gap-2 shrink-0">
+                        <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                        <span data-i18n="s4_badge">100% Highly Recommended</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    
+                    <!-- Left Box: What do you think about this English Club? -->
+                    <div class="lg:col-span-5 rounded-2xl bg-gradient-to-b from-slate-900/90 to-indigo-950/40 border border-indigo-500/30 p-6 flex flex-col justify-between space-y-5">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white" data-i18n="s4_q1">
+                                What do you think about this English Club?
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-200 leading-relaxed" data-i18n="s4_a1">
+                                "This English Club is a very <strong class="text-indigo-300">supportive and practical platform</strong>. It gives us a <strong class="text-sky-300">safe space</strong> to practice speaking and share ideas <strong class="text-emerald-300">without the pressure of academic grades</strong>."
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-800">
+                            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-700/60">
+                                <span class="text-xs font-bold text-indigo-400 block" data-i18n="s4_tag1_t">Safe Environment</span>
+                                <span class="text-[11px] text-slate-400" data-i18n="s4_tag1_d">Zero fear of making mistakes</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-700/60">
+                                <span class="text-xs font-bold text-emerald-400 block" data-i18n="s4_tag2_t">No Grade Pressure</span>
+                                <span class="text-[11px] text-slate-400" data-i18n="s4_tag2_d">Focus on practical fluency</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Box: Do you recommend your juniors to attend? -->
+                    <div class="lg:col-span-7 rounded-2xl bg-slate-900/65 border border-slate-700/70 p-6 space-y-5">
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400" data-i18n="s4_q2_sub">Advice for Juniors (Adik Tingkat)</span>
+                            <h3 class="text-xl font-extrabold text-white" data-i18n="s4_q2">
+                                Do you recommend your juniors to attend this English Club? Why or why not?
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed" data-i18n="s4_a2">
+                                <strong class="text-emerald-400">Yes, I highly recommend it.</strong> Language fluency requires consistent practice, and joining this club early will help juniors in three major ways:
+                            </p>
+                        </div>
+
+                        <!-- 3 Pillars for Juniors -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                            <div class="p-4 rounded-2xl bg-slate-800/70 border border-slate-700 hover:border-emerald-500/50 transition-all space-y-2">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="font-bold text-sm text-white" data-i18n="s4_p1_t">1. Build Self-Confidence</h4>
+                                <p class="text-xs text-slate-400 leading-relaxed" data-i18n="s4_p1_d">
+                                    Consistent speaking practice early on removes hesitation and builds courage.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-800/70 border border-slate-700 hover:border-sky-500/50 transition-all space-y-2">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center">
+                                    <i data-lucide="network" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="font-bold text-sm text-white" data-i18n="s4_p2_t">2. Expand Network</h4>
+                                <p class="text-xs text-slate-400 leading-relaxed" data-i18n="s4_p2_d">
+                                    Connect with supportive peers and seniors who share a passion for growth.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-800/70 border border-slate-700 hover:border-purple-500/50 transition-all space-y-2">
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
+                                    <i data-lucide="megaphone" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="font-bold text-sm text-white" data-i18n="s4_p3_t">3. Public Speaking</h4>
+                                <p class="text-xs text-slate-400 leading-relaxed" data-i18n="s4_p3_d">
+                                    Sharpen public speaking and idea-sharing skills essential for future educators.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SLIDE 5: SUMMARY & THANK YOU SLIDE
+             ========================================== -->
+        <section id="slide-5" class="slide-item hidden">
+            <div class="glass-panel rounded-3xl p-6 sm:p-12 border border-slate-300/80 dark:border-slate-800 text-center space-y-8">
+                
+                <div class="max-w-2xl mx-auto space-y-4">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-indigo-600 to-sky-400 mx-auto flex items-center justify-center text-white shadow-xl shadow-indigo-500/30">
+                        <i data-lucide="award" class="w-8 h-8"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-400" data-i18n="s5_badge">PRESENTATION CONCLUSION</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white" data-i18n="s5_title">
+                        Thank You for Your Attention!
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300" data-i18n="s5_subtitle">
+                        "Deliver the message first, embrace daily exposure through subtitles & shadowing, and grow together in the English Club."
+                    </p>
+                </div>
+
+                <!-- Presenter Summary Identity Card -->
+                <div class="max-w-md mx-auto p-5 rounded-2xl bg-slate-900/85 border border-indigo-500/40 flex items-center justify-between gap-4 text-left">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+                            BS
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-white text-base">Boas Sababang</h3>
+                            <p class="text-xs text-indigo-300 font-mono font-semibold">NIM: 251134146</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold">
+                        Q & A Open
+                    </span>
+                </div>
+
+                <!-- Quick Review Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                    <button onclick="goToSlide(0)" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-2 transition-all">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                        <span data-i18n="btn_restart">Back to Cover</span>
+                    </button>
+                    <button onclick="goToSlide(3)" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-2 transition-all">
+                        <i data-lucide="youtube" class="w-4 h-4"></i>
+                        <span data-i18n="btn_reopen_video">Open YouTube Subtitle Player</span>
+                    </button>
+                    <button onclick="toggleTopIndonesianBar()" class="px-4 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 text-xs font-bold flex items-center gap-2 transition-all">
+                        <i data-lucide="languages" class="w-4 h-4"></i>
+                        <span>Lihat Ringkasan Terjemahan ID</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         BOTTOM PRESENTATION CONTROL BAR
+         ========================================== -->
+    <footer class="sticky bottom-0 z-30 glass-panel border-t border-slate-800/80 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            
+            <!-- Left: Slide Dots & Counter -->
+            <div class="flex items-center gap-3">
+                <span id="slide-counter-text" class="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 border border-slate-700">
+                    01 / 06
+                </span>
+                <div class="hidden sm:flex items-center gap-1.5" id="slide-dots-container">
+                    <!-- Dots generated via JS -->
+                </div>
+            </div>
+
+            <!-- Center: Keyboard Shortcut Hint -->
+            <div class="hidden md:flex items-center gap-2 text-[11px] text-slate-400">
+                <span>Use</span>
+                <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">←</kbd>
+                <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">→</kbd>
+                <span>to navigate slides • Click <strong>Terjemahan ID (Atas)</strong> for Indonesian</span>
+            </div>
+
+            <!-- Right: Next / Prev / Fullscreen Buttons -->
+            <div class="flex items-center gap-2">
+                <button onclick="prevSlide()" id="btn-prev" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 disabled:opacity-40 text-slate-200 text-xs font-bold flex items-center gap-1.5 border border-slate-700 transition-all">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    <span data-i18n="nav_prev">Prev</span>
+                </button>
+                <button onclick="nextSlide()" id="btn-next" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-indigo-600/20 transition-all">
+                    <span data-i18n="nav_next">Next</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="toggleFullScreen()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-all" title="Fullscreen Presentation">
+                    <i data-lucide="maximize" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT LOGIC (BILINGUAL, SLIDES, YOUTUBE)
+         ========================================== -->
+    <script>
+        // Current State
+        let currentSlide = 0;
+        const totalSlides = 6;
+        let currentLang = 'en'; // English is default on first page as requested
+
+        // Indonesian Top Drawer Data per Slide (Allows accessing Indonesian at the top while viewing English slides)
+        const topIndonesianDrawerContent = [
+            {
+                title: "Slide 1: Sampul Presentasi (Boas Sababang - 251134146)",
+                html: `
+                    <p><strong>Judul Presentasi:</strong> Kelancaran Bahasa Inggris di Sekolah Dasar & Refleksi Strategi Belajar</p>
+                    <p><strong>Penyaji:</strong> Boas Sababang | <strong>NIM:</strong> 251134146</p>
+                    <p><strong>3 Topik Utama:</strong> (1) Topik Penelitian: Pentingnya guru SD fasih berbahasa Inggris, (2) Refleksi Diri & Strategi Belajar lewat Subtitle YouTube / Shadowing, (3) Rekomendasi English Club untuk adik tingkat.</p>
+                `
+            },
+            {
+                title: "Slide 2: 1. Topik Penelitian — Apakah Guru SD Harus Lancar Berbahasa Inggris?",
+                html: `
+                    <p><strong>Pertanyaan:</strong> Apakah menurut Anda guru sekolah dasar (SD) harus bisa berbicara bahasa Inggris dengan lancar? Berikan setidaknya tiga alasan dan contohnya.</p>
+                    <p><strong>Jawaban:</strong> Ya, guru SD harus bisa berbahasa Inggris dengan lancar karena tiga alasan utama:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Fondasi yang Tepat:</strong> Anak-anak mudah meniru gurunya. Contohnya, jika guru mengucapkan instruksi harian seperti <em>"Line up, please"</em> dengan benar, siswa akan terbiasa memiliki pelafalan yang tepat sejak dini.</li>
+                        <li><strong>Sumber Belajar Global:</strong> Guru dapat mengakses materi ajar internasional. Contohnya, guru bisa menggunakan video sains interaktif atau permainan dari situs luar negeri agar kelas lebih menarik.</li>
+                        <li><strong>Membangun Kebiasaan:</strong> Paparan setiap hari menghilangkan rasa takut terhadap bahasa asing. Contohnya, menyapa siswa dengan bahasa Inggris setiap pagi membuat mereka menganggap bahasa Inggris sebagai alat komunikasi biasa, bukan mata pelajaran ujian yang menakutkan.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Slide 3: 2. Refleksi Diri (Tingkat Pemahaman, Rutinitas Harian & Bagian Favorit)",
+                html: `
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Seberapa baik memahami bahasa Inggris?</strong> Saya berada di tingkat menengah (<em>intermediate</em>). Saya bisa memahami percakapan sehari-hari, inti artikel, dan film dengan subtitle bahasa Inggris, meskipun masih terus melatih kelancaran berbicara aktif.</li>
+                        <li><strong>Cara belajar dalam keseharian:</strong> Memasukkan bahasa Inggris ke rutinitas harian dengan menonton konten bahasa Inggris di YouTube, mendengarkan podcast/musik, serta mengatur bahasa ponsel ke bahasa Inggris.</li>
+                        <li><strong>Bagian paling disukai & alasannya:</strong> Bagian mendengarkan (<em>listening</em>) dan memperkaya kosakata karena bisa belajar alami lewat film dan lagu, sehingga paham ungkapan sehari-hari tanpa merasa tertekan.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Slide 4: 2. Tantangan & Fokus Strategi Belajar (Shadowing & Video Subtitle YouTube)",
+                html: `
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Hal yang membuat proses belajar lebih sulit:</strong> Tantangan terbesar saya adalah terlalu memikirkan aturan <em>grammar</em> saat hendak berbicara dan kurangnya lingkungan berbahasa Inggris untuk latihan sehari-hari.</li>
+                        <li><strong>Strategi agar belajar lebih mudah:</strong> Mempraktikkan teknik <em>shadowing</em> dengan menirukan kalimat penutur asli dari video (berbantuan subtitle), serta fokus pada penyampaian pesan terlebih dahulu daripada mengkhawatirkan <em>grammar</em> yang sempurna.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Slide 5: 3. Rekomendasi — Pendapat tentang English Club & Saran bagi Adik Tingkat",
+                html: `
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Pendapat tentang English Club ini:</strong> Wadah yang sangat suportif dan praktis. Klub ini memberi ruang aman untuk berlatih berbicara dan bertukar ide tanpa tekanan nilai akademik.</li>
+                        <li><strong>Rekomendasi untuk adik tingkat (junior):</strong> Ya, saya sangat merekomendasikannya. Kelancaran berbahasa membutuhkan latihan rutin, dan bergabung lebih awal akan membantu adik tingkat membangun kepercayaan diri, memperluas relasi, serta mengasah kemampuan <em>public speaking</em> mereka.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Slide 6: Penutup & Terima Kasih",
+                html: `
+                    <p><strong>Kesimpulan:</strong> Utamakan keberanian menyampaikan pesan, gunakan strategi alami melalui video bersubtitle dan teknik <em>shadowing</em>, serta manfaatkan English Club sebagai ruang aman untuk berkembang bersama.</p>
+                    <p><strong>Penyaji:</strong> Boas Sababang (NIM: 251134146)</p>
+                `
+            }
+        ];
+
+        // Full Bilingual Dictionary (EN & ID)
+        const translations = {
+            en: {
+                cover_badge: "ENGLISH CLUB PRESENTATION • ELEMENTARY EDUCATION",
+                cover_title_1: "English Fluency in",
+                cover_title_2: "Elementary School & Learning Strategies",
+                cover_desc: "An interactive presentation exploring why elementary school teachers should speak English fluently, personal daily learning reflections, subtitle & shadowing strategies, and recommendations for the English Club.",
+                presenter_label: "Presented By",
+                btn_start: "Start Presentation",
+                btn_jump_video: "Strategy & YouTube Player",
+                agenda_1_title: "1. Research Topic",
+                agenda_1_desc: "Should elementary school teachers speak English fluently? (Accurate Foundation, Global Resources, Habit Building).",
+                agenda_2_title: "2. Self-Reflection & Subtitle Strategy",
+                agenda_2_desc: "Proficiency level, daily routines, overcoming grammar overthinking, and live YouTube Subtitle & Shadowing practice.",
+                agenda_3_title: "3. Recommendation",
+                agenda_3_desc: "Evaluation of this English Club as a safe, grade-free space and why juniors should join early.",
+                bilingual_hint: "English is shown first. Access Indonesian translation anytime at the top bar!",
+                s1_section: "PART 01 • RESEARCH TOPIC",
+                s1_question: "Should Elementary School Teachers Be Able to Speak English Fluently?",
+                s1_thesis: "Yes! For 3 Main Reasons",
+                s1_r1_title: "Accurate Foundation",
+                s1_r1_point: "Children imitate their teachers easily. Accurate teacher pronunciation builds a strong foundation early on.",
+                example_label: "Real Classroom Example:",
+                s1_r1_ex: 'If a teacher pronounces daily instructions like <strong>"Line up, please"</strong> correctly, students will naturally build good pronunciation from a young age.',
+                s1_r2_title: "Global Learning Resources",
+                s1_r2_point: "Teachers can directly access and adapt rich international teaching materials without language barriers.",
+                s1_r2_ex: "A teacher can use interactive science videos or educational games from foreign websites to make classes more engaging.",
+                s1_r2_tag: "Interactive Science Videos & Global Games",
+                s1_r3_title: "Habit Building",
+                s1_r3_point: "Consistent daily exposure removes the psychological fear of learning a foreign language.",
+                s1_r3_ex: "Greeting students in English every morning makes them treat English as a normal communication tool, not a scary exam subject.",
+                s2_section: "PART 02 • PERSONAL REFLECTION (1/2)",
+                s2_title: "Understanding Level, Daily Routine & Favorite Part",
+                s2_c1_badge: "Intermediate Level",
+                s2_c1_q: "How well do you understand English?",
+                s2_c1_a: 'I am at an <strong class="text-indigo-300">intermediate level</strong>. I can understand daily conversations, main ideas in articles, and movies with English subtitles, though I am still improving my active speaking skills.',
+                skill_1: "Movies with English Subtitles & Listening",
+                skill_2: "Daily Conversations & Main Ideas in Articles",
+                skill_3: "Active Speaking Fluency (In Progress)",
+                s2_c2_badge: "Daily Habit Integration",
+                s2_c2_q: "How do you learn English on a daily basis?",
+                s2_c2_a: "I integrate English into my daily routine by watching English content on YouTube, listening to podcasts or music, and setting my phone's language to English.",
+                habit_1: "Watching English Content on YouTube",
+                habit_2: "Listening to English Podcasts & Music",
+                habit_3: "Setting Phone System Language to English",
+                s2_c3_badge: "Favorite Aspect",
+                s2_c3_q: "Which part of learning English do you like most? Why?",
+                s2_c3_a: 'I like <strong class="text-purple-300">listening and vocabulary enrichment</strong> the most because I can learn naturally through movies and songs, allowing me to understand real-life expressions without feeling stressed.',
+                s2_c3_highlight_title: "Why Movies & Songs Work Best:",
+                s2_c3_highlight_desc: "Contextual learning through subtitles + native audio builds real-life idioms and natural intonation without academic stress.",
+                s2_btn_next_strategy: "See My Subtitle & Shadowing Strategy",
+                s3_section: "PART 02 • FOCUS ON LEARNING STRATEGIES",
+                s3_title: "Overcoming Challenges with Shadowing & YouTube Subtitles",
+                s3_chal_label: "Learning Obstacles",
+                s3_chal_q: "What has made your learning more difficult?",
+                s3_chal_a: 'My biggest challenges are <strong class="text-rose-300">overthinking grammar rules</strong> when speaking and the <strong class="text-rose-300">lack of an English-speaking environment</strong> for daily practice.',
+                s3_strat_label: "Core Solution & Strategy",
+                s3_strat_q: "What strategies have you tried to make learning easier?",
+                s3_strat_a: 'I practice the <strong class="text-sky-300">shadowing technique</strong> by repeating sentences from native speakers in videos, and I focus on <strong class="text-emerald-300">delivering my message first</strong> rather than worrying about perfect grammar.',
+                s3_pill_1_t: "1. Subtitle + Shadowing",
+                s3_pill_1_d: "Read English subtitles & immediately mimic native speaker rhythm and pronunciation.",
+                s3_pill_2_t: "2. Message Over Grammar",
+                s3_pill_2_d: "Prioritize clear communication first without freezing over grammar rules.",
+                s3_drill_title: "Interactive Subtitle Shadowing Phrases (Click to Listen & Repeat)",
+                yt_studio_title: "YouTube Learning from Subtitles & Shadowing Player",
+                yt_btn_load: "Load & Play Video",
+                yt_preset_label: "Quick Subtitle Videos:",
+                s4_section: "PART 03 • RECOMMENDATION",
+                s4_title: "English Club Evaluation & Recommendation for Juniors",
+                s4_badge: "100% Highly Recommended",
+                s4_q1: "What do you think about this English Club?",
+                s4_a1: '"This English Club is a very <strong class="text-indigo-300">supportive and practical platform</strong>. It gives us a <strong class="text-sky-300">safe space</strong> to practice speaking and share ideas <strong class="text-emerald-300">without the pressure of academic grades</strong>."',
+                s4_tag1_t: "Safe Environment",
+                s4_tag1_d: "Zero fear of making mistakes",
+                s4_tag2_t: "No Grade Pressure",
+                s4_tag2_d: "Focus on practical fluency",
+                s4_q2_sub: "Advice for Juniors",
+                s4_q2: "Do you recommend your juniors to attend this English Club? Why or why not?",
+                s4_a2: '<strong class="text-emerald-400">Yes, I highly recommend it.</strong> Language fluency requires consistent practice, and joining this club early will help juniors in three major ways:',
+                s4_p1_t: "1. Build Self-Confidence",
+                s4_p1_d: "Consistent speaking practice early on removes hesitation and builds courage.",
+                s4_p2_t: "2. Expand Network",
+                s4_p2_d: "Connect with supportive peers and seniors who share a passion for growth.",
+                s4_p3_t: "3. Public Speaking",
+                s4_p3_d: "Sharpen public speaking and idea-sharing skills essential for future educators.",
+                s5_badge: "PRESENTATION CONCLUSION",
+                s5_title: "Thank You for Your Attention!",
+                s5_subtitle: '"Deliver the message first, embrace daily exposure through subtitles & shadowing, and grow together in the English Club."',
+                btn_restart: "Back to Cover",
+                btn_reopen_video: "Open YouTube Subtitle Player",
+                nav_prev: "Prev",
+                nav_next: "Next"
+            },
+            id: {
+                cover_badge: "PRESENTASI ENGLISH CLUB • PENDIDIKAN GURU SD",
+                cover_title_1: "Kelancaran Bahasa Inggris di",
+                cover_title_2: "Sekolah Dasar & Strategi Belajar",
+                cover_desc: "Presentasi interaktif yang membahas pentingnya guru SD berbahasa Inggris dengan lancar, refleksi belajar harian, strategi belajar lewat subtitle & teknik shadowing, serta rekomendasi English Club.",
+                presenter_label: "Disusun & Dipresentasikan Oleh",
+                btn_start: "Mulai Presentasi",
+                btn_jump_video: "Strategi & Pemutar YouTube",
+                agenda_1_title: "1. Topik Penelitian",
+                agenda_1_desc: "Apakah guru SD harus bisa berbicara bahasa Inggris dengan lancar? (Fondasi Tepat, Sumber Global, Membangun Kebiasaan).",
+                agenda_2_title: "2. Refleksi Diri & Strategi Subtitle",
+                agenda_2_desc: "Tingkat pemahaman, rutinitas harian, mengatasi overthinking grammar, serta praktik video YouTube Subtitle & Shadowing.",
+                agenda_3_title: "3. Rekomendasi",
+                agenda_3_desc: "Pendapat mengenai English Club sebagai ruang aman tanpa tekanan nilai dan alasan adik tingkat harus bergabung.",
+                bilingual_hint: "Anda sedang melihat mode Bahasa Indonesia penuh. Klik EN di kanan atas untuk kembali ke Bahasa Inggris!",
+                s1_section: "BAGIAN 01 • TOPIK PENELITIAN",
+                s1_question: "Apakah Guru Sekolah Dasar (SD) Harus Bisa Berbicara Bahasa Inggris dengan Lancar?",
+                s1_thesis: "Ya! Karena 3 Alasan Utama",
+                s1_r1_title: "Fondasi yang Tepat",
+                s1_r1_point: "Anak-anak mudah meniru gurunya. Pelafalan guru yang akurat membangun fondasi bahasa yang kuat sejak dini.",
+                example_label: "Contoh Nyata di Kelas:",
+                s1_r1_ex: 'Jika guru mengucapkan instruksi harian seperti <strong>"Line up, please"</strong> dengan benar, siswa akan terbiasa memiliki pelafalan yang tepat sejak dini.',
+                s1_r2_title: "Sumber Belajar Global",
+                s1_r2_point: "Guru dapat mengakses dan mengadaptasi materi ajar internasional yang kaya tanpa kendala bahasa.",
+                s1_r2_ex: "Guru bisa menggunakan video sains interaktif atau permainan dari situs luar negeri agar suasana kelas lebih menarik.",
+                s1_r2_tag: "Video Sains Interaktif & Permainan Global",
+                s1_r3_title: "Membangun Kebiasaan",
+                s1_r3_point: "Paparan bahasa Inggris setiap hari menghilangkan rasa takut terhadap bahasa asing.",
+                s1_r3_ex: "Menyapa siswa dengan bahasa Inggris setiap pagi membuat mereka menganggap bahasa Inggris sebagai alat komunikasi biasa, bukan mata pelajaran ujian yang menakutkan.",
+                s2_section: "BAGIAN 02 • REFLEKSI DIRI (1/2)",
+                s2_title: "Tingkat Pemahaman, Rutinitas Harian & Bagian Favorit",
+                s2_c1_badge: "Tingkat Menengah (Intermediate)",
+                s2_c1_q: "Seberapa baik Anda memahami bahasa Inggris?",
+                s2_c1_a: 'Saya berada di tingkat menengah (<strong class="text-indigo-300">intermediate</strong>). Saya bisa memahami percakapan sehari-hari, inti artikel, dan film dengan subtitle bahasa Inggris, meskipun saya masih terus melatih kelancaran berbicara aktif saya.',
+                skill_1: "Film dengan Subtitle Inggris & Mendengarkan",
+                skill_2: "Percakapan Harian & Inti Artikel",
+                skill_3: "Kelancaran Berbicara Aktif (Terus Dilatih)",
+                s2_c2_badge: "Integrasi Rutinitas Harian",
+                s2_c2_q: "Bagaimana cara Anda belajar bahasa Inggris dalam keseharian?",
+                s2_c2_a: "Saya memasukkan bahasa Inggris ke dalam rutinitas harian dengan menonton konten berbahasa Inggris di YouTube, mendengarkan podcast atau musik, serta mengatur bahasa di ponsel saya ke bahasa Inggris.",
+                habit_1: "Menonton Konten Bahasa Inggris di YouTube",
+                habit_2: "Mendengarkan Podcast & Musik Bahasa Inggris",
+                habit_3: "Mengatur Bahasa Ponsel ke Bahasa Inggris",
+                s2_c3_badge: "Bagian Paling Disukai",
+                s2_c3_q: "Bagian mana dari belajar bahasa Inggris yang paling Anda sukai? Mengapa?",
+                s2_c3_a: 'Saya paling menyukai bagian <strong class="text-purple-300">mendengarkan (listening) dan memperkaya kosakata</strong> karena saya bisa belajar secara alami lewat film dan lagu, sehingga saya paham ungkapan sehari-hari tanpa merasa tertekan.',
+                s2_c3_highlight_title: "Mengapa Film & Lagu Sangat Efektif:",
+                s2_c3_highlight_desc: "Belajar kontekstual lewat subtitle dan audio penutur asli membangun pemahaman ungkapan nyata tanpa stres akademik.",
+                s2_btn_next_strategy: "Lihat Strategi Subtitle & Shadowing Saya",
+                s3_section: "BAGIAN 02 • FOKUS STRATEGI BELAJAR",
+                s3_title: "Mengatasi Tantangan dengan Teknik Shadowing & Subtitle YouTube",
+                s3_chal_label: "Tantangan Belajar",
+                s3_chal_q: "Hal apa yang membuat proses belajar Anda menjadi lebih sulit?",
+                s3_chal_a: 'Tantangan terbesar saya adalah <strong class="text-rose-300">terlalu memikirkan aturan grammar</strong> saat hendak berbicara dan <strong class="text-rose-300">kurangnya lingkungan berbahasa Inggris</strong> untuk latihan sehari-hari.',
+                s3_strat_label: "Solusi & Strategi Utama",
+                s3_strat_q: "Strategi apa yang sudah Anda coba untuk membuat belajar lebih mudah?",
+                s3_strat_a: 'Saya mempraktikkan <strong class="text-sky-300">teknik shadowing</strong> dengan menirukan kalimat penutur asli dari video, serta fokus pada <strong class="text-emerald-300">penyampaian pesan terlebih dahulu</strong> daripada mengkhawatirkan grammar yang sempurna.',
+                s3_pill_1_t: "1. Subtitle + Shadowing",
+                s3_pill_1_d: "Membaca subtitle bahasa Inggris sambil menirukan intonasi dan pengucapan penutur asli.",
+                s3_pill_2_t: "2. Pesan di Atas Grammar",
+                s3_pill_2_d: "Mengutamakan tersampaikannya maksud komunikasi tanpa takut salah aturan tata bahasa.",
+                s3_drill_title: "Latihan Kalimat Shadowing Interaktif (Klik untuk Dengar & Tirukan)",
+                yt_studio_title: "Pemutar YouTube Belajar dari Subtitle & Shadowing",
+                yt_btn_load: "Muat & Putar Video",
+                yt_preset_label: "Pilihan Video Subtitle:",
+                s4_section: "BAGIAN 03 • REKOMENDASI",
+                s4_title: "Evaluasi English Club & Rekomendasi untuk Adik Tingkat",
+                s4_badge: "Sangat Direkomendasikan",
+                s4_q1: "Apa pendapat Anda tentang English Club ini?",
+                s4_a1: '"English Club ini adalah <strong class="text-indigo-300">wadah yang sangat suportif dan praktis</strong>. Klub ini memberi kita <strong class="text-sky-300">ruang aman</strong> untuk berlatih berbicara dan bertukar ide <strong class="text-emerald-300">tanpa tekanan nilai akademik</strong>."',
+                s4_tag1_t: "Ruang Aman",
+                s4_tag1_d: "Bebas berlatih tanpa takut salah",
+                s4_tag2_t: "Tanpa Tekanan Nilai",
+                s4_tag2_d: "Fokus pada praktik nyata",
+                s4_q2_sub: "Saran untuk Adik Tingkat (Junior)",
+                s4_q2: "Apakah Anda merekomendasikan adik tingkat untuk mengikuti English Club ini?",
+                s4_a2: '<strong class="text-emerald-400">Ya, saya sangat merekomendasikannya.</strong> Kelancaran berbahasa membutuhkan latihan rutin, dan bergabung lebih awal akan membantu adik tingkat dalam tiga hal utama:',
+                s4_p1_t: "1. Kepercayaan Diri",
+                s4_p1_d: "Latihan rutin sejak awal menghilangkan keraguan dan membangun keberanian berbicara.",
+                s4_p2_t: "2. Memperluas Relasi",
+                s4_p2_d: "Terhubung dengan teman dan kakak tingkat suportif yang memiliki semangat belajar.",
+                s4_p3_t: "3. Public Speaking",
+                s4_p3_d: "Mengasah kemampuan berbicara di depan umum yang sangat penting bagi calon pendidik.",
+                s5_badge: "KESIMPULAN PRESENTASI",
+                s5_title: "Terima Kasih Atas Perhatian Anda!",
+                s5_subtitle: '"Fokus sampaikan pesan terlebih dahulu, biasakan paparan harian lewat subtitle & shadowing, dan berkembang bersama di English Club."',
+                btn_restart: "Kembali ke Sampul",
+                btn_reopen_video: "Buka Pemutar Video YouTube",
+                nav_prev: "Sebelumnya",
+                nav_next: "Selanjutnya"
+            }
+        };
+
+        // Initialize UI on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderSlideDots();
+            updateSlideUI();
+        });
+
+        // Render Slide Dots
+        function renderSlideDots() {
+            const container = document.getElementById('slide-dots-container');
+            container.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.onclick = () => goToSlide(i);
+                dot.className = `h-2 rounded-full transition-all ${i === currentSlide ? 'w-6 bg-indigo-500' : 'w-2 bg-slate-700 hover:bg-slate-500'}`;
+                dot.title = `Go to Slide ${i + 1}`;
+                container.appendChild(dot);
+            }
+        }
+
+        // Navigate to Specific Slide
+        function goToSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+            currentSlide = index;
+            updateSlideUI();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                goToSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        // Update Slide Visibility, Tabs, Progress & Top Indonesian Drawer
+        function updateSlideUI() {
+            for (let i = 0; i < totalSlides; i++) {
+                const slideEl = document.getElementById(`slide-${i}`);
+                if (i === currentSlide) {
+                    slideEl.classList.remove('hidden');
+                    slideEl.classList.remove('slide-enter');
+                    void slideEl.offsetWidth; // trigger reflow for animation
+                    slideEl.classList.add('slide-enter');
+                } else {
+                    slideEl.classList.add('hidden');
+                }
+
+                // Update Top Navigation Tabs
+                const tabEl = document.getElementById(`nav-tab-${i}`);
+                if (tabEl) {
+                    if (i === currentSlide) {
+                        tabEl.className = 'slide-tab px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow flex items-center gap-1';
+                    } else {
+                        tabEl.className = 'slide-tab px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white flex items-center gap-1';
+                    }
+                }
+            }
+
+            // Progress Bar & Counter
+            const progressPercent = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('slide-progress-bar').style.width = `${progressPercent}%`;
+            document.getElementById('slide-counter-text').textContent = `0${currentSlide + 1} / 0${totalSlides}`;
+
+            // Prev / Next Buttons State
+            document.getElementById('btn-prev').disabled = currentSlide === 0;
+            document.getElementById('btn-next').disabled = currentSlide === totalSlides - 1;
+
+            // Update Dots
+            renderSlideDots();
+
+            // Update Top Indonesian Translation Drawer Content for Current Slide
+            const drawerData = topIndonesianDrawerContent[currentSlide];
+            if (drawerData) {
+                document.getElementById('top-indo-slide-title').textContent = drawerData.title;
+                document.getElementById('top-indo-content').innerHTML = drawerData.html;
+            }
+        }
+
+        // Toggle Top Indonesian Translation Drawer (Di Halaman Atas)
+        function toggleTopIndonesianBar() {
+            const drawer = document.getElementById('top-indo-drawer');
+            const chevron = document.getElementById('top-indo-chevron');
+            const isHidden = drawer.classList.contains('hidden');
+            if (isHidden) {
+                drawer.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                drawer.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Switch Language Between English (Default) and Indonesian
+        function setLanguage(lang) {
+            currentLang = lang;
+            const dict = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.innerHTML = dict[key];
+                }
+            });
+
+            // Update Toggle Button Styles
+            const btnEn = document.getElementById('lang-btn-en');
+            const btnId = document.getElementById('lang-btn-id');
+            if (lang === 'en') {
+                btnEn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow';
+                btnId.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white';
+            } else {
+                btnId.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow';
+                btnEn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white';
+            }
+        }
+
+        // Extract YouTube ID from any YouTube URL or 11-char ID
+        function extractYouTubeId(input) {
+            const trimmed = input.trim();
+            if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) {
+                return trimmed;
+            }
+            const regExp = /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/)([^#\&\?]*).*/;
+            const match = trimmed.match(regExp);
+            return (match && match[1].length === 11) ? match[1] : null;
+        }
+
+        // Load Custom YouTube Video from User Input
+        function loadCustomYouTubeVideo() {
+            const inputEl = document.getElementById('yt-url-input');
+            const rawUrl = inputEl.value;
+            const videoId = extractYouTubeId(rawUrl);
+
+            if (!videoId) {
+                inputEl.value = '';
+                inputEl.placeholder = 'Link tidak valid! Masukkan URL YouTube seperti https://www.youtube.com/watch?v=MrrxN6GZJaU';
+                return;
+            }
+
+            switchYouTubePreset(videoId, `Custom YouTube Video (${videoId})`);
+        }
+
+        // Switch YouTube Video in Embedded Player with Subtitles Enabled
+        function switchYouTubePreset(videoId, titleText) {
+            const iframe = document.getElementById('youtube-player-frame');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&cc_load_policy=1&cc_lang_pref=en&rel=0`;
+            document.getElementById('yt-active-title').textContent = titleText;
+            document.getElementById('yt-direct-link').href = `https://www.youtube.com/watch?v=${videoId}`;
+        }
+
+        // Web Speech API Pronunciation Helper for Examples & Shadowing
+        function speakPhrase(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.92;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Toggle Light / Dark Theme
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Fullscreen Toggle
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Keyboard Navigation (Left/Right Arrows)
+        window.addEventListener('keydown', (e) => {
+            if (document.activeElement.tagName === 'INPUT') return;
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>
